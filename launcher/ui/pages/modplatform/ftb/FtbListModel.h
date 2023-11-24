@@ -21,6 +21,7 @@
 #include "modplatform/modpacksch/FTBPackManifest.h"
 #include "net/NetJob.h"
 #include <QIcon>
+#include <memory>
 
 namespace Ftb {
 
@@ -77,7 +78,7 @@ private:
     NetJob::Ptr jobPtr;
     int currentPack;
     QList<int> remainingPacks;
-    QByteArray response;
+    std::shared_ptr<QByteArray> response = std::make_shared<QByteArray>();
 };
 
 }
